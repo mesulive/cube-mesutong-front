@@ -13,7 +13,7 @@ import MyAlertTemplate from "./MyAlertTemplate";
 import React from "react";
 import Mesulive from "./components/Mesulive";
 import Notice from "./components/Notice";
-import {Stack} from "@mui/material";
+import {Stack, StyledEngineProvider} from "@mui/material";
 
 const middleWare = composeWithDevTools(applyMiddleware(ReduxThunk))
 const store = createStore(rootReducer, middleWare);
@@ -30,6 +30,7 @@ function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
+        <StyledEngineProvider injectFirst>
         <AlertProvider template={MyAlertTemplate} {...options}>
           <Title/>
           <Notice/>
@@ -49,6 +50,7 @@ function App() {
             </Stack>
           </footer>
         </AlertProvider>
+        </StyledEngineProvider>
       </Provider>
     </BrowserRouter>
   );

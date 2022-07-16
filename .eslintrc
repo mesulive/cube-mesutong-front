@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "plugins": [
+    "react",
+    "prettier",
+    "react-hooks",
+    "only-warn"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
+    "no-plusplus": "off",
+    "react/no-this-in-sfc": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-duplicate-props": "off",
+    "react/no-array-index-key": "off",
+    "no-param-reassign": "off",
+    "prettier/prettier": [
+      "off",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ]
+  }
+}

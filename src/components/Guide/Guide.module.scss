@@ -1,0 +1,54 @@
+@import "src/styles/utils";
+
+.container {
+  margin: 24px auto 48px auto;
+
+  @include desktop {
+    width: 768px;
+    padding: 16px;
+  }
+
+  @include mobile {
+    width: 80%;
+  }
+}
+
+.content {
+  color: $grey_3;
+
+  @include desktop {
+    @include KoreanFont(500, 18px);
+  }
+
+  @include mobile {
+    @include KoreanFont(500, 14px);
+  }
+
+  h1 {
+    color: $grey_2;
+    margin-bottom: 8px;
+
+    @include desktop {
+      @include KoreanFont(700, 32px);
+    }
+
+    @include mobile {
+      @include KoreanFont(700, 24px);
+    }
+
+    & ~ & {
+      margin-top:64px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $dark;
+  }
+
+  video {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

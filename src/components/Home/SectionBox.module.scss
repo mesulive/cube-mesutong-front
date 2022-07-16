@@ -1,0 +1,45 @@
+@import '../../styles/utils';
+
+.container {
+  margin: 0 auto;
+  @include desktop {
+    margin-top: 48px;
+    width: 768px;
+  }
+
+  @include mobile {
+    margin-top: 20px;
+    width: 90%;
+  }
+}
+
+.title {
+  color: $grey_1;
+  padding: 0;
+  margin: 0 0 8px 0;
+
+  @include desktop {
+    @include KoreanFont(700, 24px);
+  }
+
+  @include mobile {
+    @include KoreanFont(700, 18px);
+  }
+}
+
+.box {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+
+  @include desktop {
+    padding: 40px 0;
+  }
+
+  @include mobile {
+    padding: 32px 0;
+  }
+}

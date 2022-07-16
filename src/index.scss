@@ -1,0 +1,16 @@
+@import "styles/utils.scss";
+
+body {
+  background: #EBEBEB;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+footer {
+  @include KoreanFont(500, 14px);
+  color: #7E7E7E;
+  margin: 64px auto 32px auto;
+  display: flex;
+  justify-content: center;
+}

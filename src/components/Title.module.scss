@@ -1,0 +1,73 @@
+@import 'src/styles/utils';
+
+$fontSize: 36px;
+
+.bar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 10px rgba(120, 120, 120, 0.1);
+
+  @include desktop {
+    height: 100px;
+  }
+
+  @include mobile {
+    height: 100px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include desktop {
+    width: 768px;
+  }
+
+  @include mobile {
+    width: 90%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.link {
+  color: $secondary;
+
+  @include desktop {
+    @include KoreanFont(700, 20px);
+    margin-left: 64px;
+  }
+
+  @include mobile {
+    @include KoreanFont(700, 16px);
+
+    & + & {
+      margin-left: 30px;
+    }
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-family: GongGothicMedium, serif;
+  margin: 8px 0;
+  color: $primary;
+
+  @include desktop {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    width: 100%;
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,175 @@
+@import "../../../styles/utils";
+
+.optionSetBox {
+  box-shadow: 0 0 6px rgba(120, 120, 120, 0.3);
+  position: relative;
+
+  @include desktop {
+    width: 424px;
+    padding: 24px 0;
+    margin-bottom: 16px;
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 24px 0;
+    margin-bottom: 16px;
+  }
+}
+
+.deleteButtonBox {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: -12px;
+  right: -12px;
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include mobile {
+    width: 80%;
+  }
+}
+
+.select {
+  @include desktop {
+    @include selectBox(240px);
+  }
+
+  @include mobile {
+    @include selectBox(0);
+    flex: 1;
+  }
+}
+
+.optionLabel {
+  @include desktop {
+    @include KoreanFont(700, 18px);
+    margin-right: 8px;
+  }
+
+  @include mobile {
+    @include KoreanFont(700, 16px);
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.figureInput {
+  @include inputBox(46px);
+  margin-right: 8px;
+}
+
+.unit {
+  @include KoreanFont(400, 18px);
+  width: 18px;
+  display: inline-block;
+}
+
+.optionBox {
+  & + & {
+    margin-top: 8px;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.label {
+  @include label();
+  display: inline-block;
+}
+
+/* Tooltip container */
+.help {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  margin-right: 32px;
+}
+
+/* Tooltip text */
+.help .tooltip {
+  $width: 300px;
+  display: inline;
+  visibility: hidden;
+  width: $width;
+  top: 120%;
+  left: 50%;
+  margin-left: $width/-2; /* Use half of the width (120/2 = 60), to center the tooltip */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.help:hover .tooltip {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+.verticallyCenter {
+  @include verticallyCenter();
+  margin: 0 0 8px 0;
+}
+
+.initButton {
+  @include KoreanFont(500, 16px);
+  color: $primary;
+  cursor: pointer;
+}
+
+.addButtonContainer {
+  @include verticallyCenter();
+  justify-content: center;
+  cursor: pointer;
+  height: 26px;
+}
+
+.addButtonText {
+  @include KoreanFont(500, 18px);
+  color: $primary;
+  height: 24px;
+  padding-bottom: 1px;
+}
+
+.disabled {
+  @include disabled();
+
+  &:hover {
+
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../../styles/utils";
+
+.label {
+  @include label();
+  margin: 0 0 8px 0;
+}
+
+.box {
+  display: inline-block;
+  box-sizing: border-box;
+
+  @include desktop {
+    max-width: 424px;
+  }
+}
+
+.inputLabel {
+  @include KoreanFont(500, 18px);
+}
+
+.container {
+  @include desktop {
+    display: flex;
+    max-width: 424px;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.cube {
+  @include desktop {
+    width: 136px;
+
+    &:nth-child(n+4) {
+      margin-top: 8px;
+    }
+  }
+
+  @include mobile {
+    & + & {
+      margin-top: 8px;
+    }
+  }
+}

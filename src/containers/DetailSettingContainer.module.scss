@@ -1,0 +1,38 @@
+@import "src/styles/utils";
+
+.box {
+  margin: 0;
+
+  @include desktop {
+    width: 424px;
+  }
+
+  @include mobile {
+    width: 80%;
+  }
+
+  & + & {
+    @include desktop {
+      margin-top: 24px;
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+}
+
+.horizontallyCenter {
+  display:flex;
+  justify-content: center;
+}
+
+.errorMessage {
+  @include desktop {
+    @include KoreanFont(500, 16px);
+  }
+
+  @include mobile {
+    @include KoreanFont(500, 14px);
+  }
+}

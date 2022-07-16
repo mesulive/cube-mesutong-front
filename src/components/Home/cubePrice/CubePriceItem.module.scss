@@ -1,0 +1,88 @@
+@import '../../../styles/utils';
+
+.cube-container {
+  padding: 0;
+  margin: 0;
+
+  @include desktop {
+    max-width: 190px;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+}
+
+.price {
+  @include mobile {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .input {
+    margin: 0 8px 0 0;
+
+    @include desktop {
+      @include inputBox(110px);
+      @include nonKoreanFont(400, 18px);
+    }
+
+    @include mobile {
+      flex: 1;
+      @include inputBox(95px);
+      @include nonKoreanFont(400, 16px);
+    }
+  }
+
+  .select {
+    @include desktop {
+      @include selectBox(66px);
+      @include KoreanFont(400, 18px);
+    }
+
+    @include mobile {
+      @include selectBox(58px);
+      @include KoreanFont(400, 18px);
+    }
+  }
+}
+
+.cube {
+  @include verticallyCenter();
+  justify-content: flex-start;
+  margin: 0 0 8px 0;
+
+  @include desktop {
+    height: 30px;
+  }
+
+  @include mobile {
+    height: 27px;
+  }
+
+  img {
+    object-fit: scale-down;
+    user-select: none;
+  }
+
+  span {
+    flex: 1;
+    padding: 0;
+    margin: 0 0 0 6px;
+    line-height: 29px;
+
+    @include desktop {
+      height: 30px;
+      @include KoreanFont(700, 20px);
+    }
+
+    @include mobile {
+      height: 27px;
+      @include KoreanFont(700, 18px);
+    }
+  }
+}

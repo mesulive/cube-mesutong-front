@@ -1,0 +1,22 @@
+@import "../../../styles/utils";
+
+.box {
+  display:flex;
+  max-width:140px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.label {
+  @include label();
+  margin-bottom: 8px;
+}
+
+.input {
+  @include inputBox(48px);
+  text-align: center;
+}
+
+.text {
+  @include KoreanFont(500, 18px);
+}

@@ -1,0 +1,116 @@
+$primary: #FF7272;
+$secondary: #FF9090;
+$dark: #FF5353;
+$grey_1: #4E4E4E;
+$grey_2: #525252;
+$grey_3: #2E2E2E;
+$grey_4: #F2F2F2;
+
+$breakpoint-mobile: 800px;
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: 'GongGothicMedium';
+  font-display: auto;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin inputBox($width) {
+  border: 0;
+  background-color: $grey_4;
+  width: $width;
+  box-sizing: border-box;
+  outline: none;
+  transition: all ease-in 0.1s;
+
+  @include desktop {
+    height: 34px;
+    padding: 4px 8px;
+    font-size: 18px;
+  }
+
+  @include mobile {
+    height: 30px;
+    padding: 2px 6px;
+    font-size: 16px;
+  }
+  &:hover {
+    background-color: #D5D5D5;
+  }
+}
+
+@mixin selectBox($width) {
+  @include inputBox($width);
+  appearance: none;
+  background-repeat: no-repeat, repeat;
+
+  @include desktop {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath id='arrow' data-name='arrow' d='M-1723,268l0,0-.952-.96,0,0L-1728,262.96l.954-.96,4.047,4.076,4.047-4.076.953.96-4.047,4.076,0,0-.954.96Z' transform='translate(1728 -262)' fill='%232e2e2e'/%3E%3C/svg%3E%0A");
+    background-position: right 8px top 50%;
+  }
+
+  @include mobile {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='4.8' viewBox='0 0 10 6'%3E%3Cpath id='arrow' data-name='arrow' d='M-1723,268l0,0-.952-.96,0,0L-1728,262.96l.954-.96,4.047,4.076,4.047-4.076.953.96-4.047,4.076,0,0-.954.96Z' transform='translate(1728 -262)' fill='%232e2e2e'/%3E%3C/svg%3E%0A");
+    background-position: right 6px top 50%;
+  }
+}
+
+@mixin setLetterSpace($fontSize) {
+  $space: $fontSize * -0.025;
+  letter-spacing: $space;
+}
+
+@mixin nonKoreanFont($weight, $fontSize) {
+  @include setLetterSpace($fontSize);
+  font-family: roboto, serif;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $fontSize;
+  user-select: none;
+}
+
+@mixin KoreanFont($weight, $fontSize) {
+  @include setLetterSpace($fontSize);
+  font-family: Noto Sans KR, serif;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $fontSize;
+  user-select: none;
+}
+
+@mixin label() {
+  color: $grey_2;
+  height: 30px;
+
+  @include desktop {
+    @include KoreanFont(700, 20px);
+  }
+
+  @include mobile {
+    @include KoreanFont(700, 18px);
+  }
+}
+
+@mixin verticallyCenter() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin disabled() {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}

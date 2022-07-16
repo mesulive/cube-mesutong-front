@@ -1,0 +1,22 @@
+@import "../../../styles/utils";
+
+.container {
+  box-sizing: border-box;
+  padding: 16px 24px;
+  overflow-y: auto;
+}
+
+.detailContainer {
+  & + & {
+    margin-top: 40px;
+  }
+}
+
+.cube {
+  @include KoreanFont(700, 22px);
+  margin-bottom: 4px;
+}
+
+.koreanFont {
+  @include KoreanFont(400, 16px);
+}

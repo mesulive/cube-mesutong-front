@@ -1,0 +1,79 @@
+@import "../../../styles/utils";
+
+.cubes-container {
+  margin: 0;
+  padding: 0;
+
+  @include desktop {
+    width: 676px;
+    min-height: 182px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+  }
+
+  @include mobile {
+    width: 80%;
+  }
+}
+
+.preset-container {
+  display: flex;
+  justify-content: center;
+
+  @include desktop {
+    flex-direction: row;
+    margin: 40px 0 0;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    width: 80%;
+    margin: 24px 0 0;
+  }
+
+  button {
+    border: none;
+    color: white;
+    text-align: center;
+    background-size: 100% 200%;
+    transition: all ease-in 0.1s;
+
+    @include desktop {
+      @include KoreanFont(500, 18px);
+      height: 40px;
+      width: 240px;
+    }
+
+    @include mobile {
+      @include KoreanFont(500, 16px);
+      padding: 4px 0;
+      width: 100%;
+    }
+
+    & + button {
+      @include desktop {
+        margin-left: 24px;
+      }
+
+      @include mobile {
+        margin-top: 24px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-position: 0 100%;
+    }
+  }
+}
+
+
+.reboot {
+  background-image: linear-gradient(to bottom, #5588CC, #005A66);
+}
+
+.common {
+  background-image: linear-gradient(to bottom, #CCB100, #996A0C);
+}

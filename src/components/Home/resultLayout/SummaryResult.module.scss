@@ -1,0 +1,72 @@
+@import "../../../styles/utils";
+
+.container {
+  box-sizing: border-box;
+  padding: 16px 24px;
+  overflow-y: auto;
+}
+
+.info {
+  @include desktop {
+    display:none;
+  }
+
+  @include mobile {
+    @include KoreanFont(400, 16px);
+  }
+}
+
+.summaryContainer {
+  & + & {
+    @include desktop {
+      margin-top: 40px;
+    }
+
+    @include mobile {
+      margin-top: 24px;
+    }
+  }
+}
+
+.cube {
+  @include verticallyCenter();
+  margin-bottom:8px;
+
+  @include desktop {
+    height: 32px;
+  }
+
+  @include mobile {
+    height: 27px;
+  }
+
+  img {
+    object-fit: scale-down;
+    user-select: none;
+  }
+
+  span {
+    flex: 1;
+    padding: 0;
+    margin: 0 0 0 6px;
+
+    @include desktop {
+      @include KoreanFont(700, 22px);
+    }
+
+    @include mobile {
+      @include KoreanFont(700, 20px);
+    }
+  }
+}
+
+.title {
+  @include KoreanFont(500, 18px);
+  & ~ & {
+    margin-top:16px;
+  }
+}
+
+.content {
+  @include KoreanFont(400, 16px);
+}

@@ -1,0 +1,29 @@
+@import "../../../styles/utils";
+
+.label {
+  @include label();
+  margin: 0 8px 0 0;
+
+  @include desktop {
+    width: 80px;
+  }
+
+  @include mobile {
+    min-width: 76px;
+  }
+}
+
+.select {
+  @include desktop {
+    @include selectBox(100px);
+  }
+
+  @include mobile {
+    @include selectBox(0);
+    flex: 1;
+  }
+}
+
+.verticallyCenter {
+  @include verticallyCenter();
+}

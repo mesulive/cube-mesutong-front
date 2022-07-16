@@ -1,0 +1,29 @@
+@import "../../../styles/utils";
+
+.box {
+  box-sizing: border-box;
+
+  @include desktop {
+    display: inline-block;
+    max-width: 180px;
+    margin-left: 32px;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.label {
+  @include label();
+  margin: 0 0 8px 0;
+}
+
+.inputLabel {
+  @include KoreanFont(400, 18px);
+}
+
+.verticallyCenter {
+  @include verticallyCenter();
+}

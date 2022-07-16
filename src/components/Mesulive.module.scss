@@ -1,0 +1,37 @@
+@import 'src/styles/utils';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700');
+
+.wrapper {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #7176791A;
+  padding: 16px;
+  box-sizing: border-box;
+  margin: 0 auto 16px;
+  display: flex;
+  @include desktop {
+    margin-top: 48px;
+    width: 768px;
+  }
+
+  @include mobile {
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include KoreanFont(700, 20px);
+    color: #FF8009;
+
+    img {
+      height: 32px;
+      margin-right: 8px;
+      fill:#FF8009;
+    }
+  }
+}

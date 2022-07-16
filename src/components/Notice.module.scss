@@ -1,0 +1,10 @@
+@import 'src/styles/utils';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700');
+
+.notice {
+  @include KoreanFont(500, 14px);
+
+  :global(.MuiAlertTitle-root) {
+    @include KoreanFont(700, 14px);
+  }
+}

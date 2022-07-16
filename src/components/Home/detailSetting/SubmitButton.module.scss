@@ -1,0 +1,18 @@
+@import "../../../styles/utils";
+
+.button {
+  @include KoreanFont(500, 18px);
+  border: none;
+  color: white;
+  width: 210px;
+  height: 40px;
+  transition: all ease-in 0.1s;
+  text-align: center;
+  background-color:$primary;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color:#CC5C5C;
+  }
+}

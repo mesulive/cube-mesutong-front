@@ -1,0 +1,28 @@
+@import "../../../styles/utils";
+
+.label {
+  @include label();
+  width:80px;
+  margin: 0 8px 0 0;
+}
+
+.level {
+  margin-right: 4px;
+
+  @include desktop {
+    @include nonKoreanFont(500, 18px);
+  }
+
+  @include mobile {
+    @include nonKoreanFont(500, 16px);
+  }
+}
+
+.input {
+  @include inputBox(48px);
+  text-align: center;
+}
+
+.verticallyCenter {
+  @include verticallyCenter();
+}
